@@ -1,0 +1,16 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}{% endblock %}</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/base.css?232">
+	{% comment %}
+	<link rel="stylesheet" type="text/css" href="{% static "css/base.css" %}">		
+	{% endcomment %}
+	{% block css_files %}{% endblock %}
+</head>
+<body>
+	{% block content %}{% endblock %}
+	{% block js_files %}{% endblock %}
+</body>
+</html>

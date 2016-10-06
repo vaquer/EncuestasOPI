@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %} Polls {% endblock %}
+
+{% block content %}
+	<h1>Polls</h1>
+	{% for poll in polls %}
+		<div class="poll">
+			<h3><a href="{{poll.get_absolute_url}}">{{poll.title|capfirst}}</a></h3>
+			<p>{{poll.creation_date|date:"D d M Y"}}</p>
+		</div>
+	{% endfor %}
+{% endblock %}

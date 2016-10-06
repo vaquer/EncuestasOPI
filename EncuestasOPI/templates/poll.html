@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %} Poll {% if poll.enabled %}{{poll.title|capfirst}} {% else %} No disponible {% endif %}{% endblock %}
+
+{% block content %}
+	<div class="poll">
+	{% if poll.enabled %}
+		<h1>{{poll.title}}</h1>
+		<p>{{poll.creation_date|date:"D d M Y"}}</p>
+		<p>Descripcion:</p>
+		<p>{{poll.description}}</p>
+	{% else %}
+		<h1>La encuesta no se encuentra disponible</h1>
+	{% endif %}
+	</div>
+{% endblock %}
